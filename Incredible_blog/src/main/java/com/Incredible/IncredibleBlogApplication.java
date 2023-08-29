@@ -13,8 +13,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Version 1.0
  */
 
-@MapperScan("com.Incredible.mapper")
+
 @SpringBootApplication
+@MapperScan("com.Incredible.mapper")
 public class IncredibleBlogApplication {
     public static void main(String[] args) {
         SpringApplication.run(IncredibleBlogApplication.class,args);
