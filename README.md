@@ -1,2 +1,2 @@
 # IncredibleBlog
-springboot与vue前后端分离的博客系统
+vue与springboot前后端分离的博客系统
