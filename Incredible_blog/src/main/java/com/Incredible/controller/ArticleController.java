@@ -25,10 +25,10 @@ public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
-//    @GetMapping("/list")
-//    public List<Article> test(){
-//        return articleService.list();
-//    }
+    @GetMapping("/list")
+    public List<Article> test(){
+        return articleService.list();
+    }
 
 //    @GetMapping("hotArticleList")
 //    public ResponseResult hotArticleList(){
