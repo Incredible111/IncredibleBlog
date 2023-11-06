@@ -1,5 +1,6 @@
 package com.Incredible.service;
 
+import com.Incredible.domain.ResponseResult;
 import com.Incredible.domain.entity.Article;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.springframework.stereotype.Service;
@@ -14,4 +15,5 @@ import org.springframework.stereotype.Service;
  */
 
 public interface ArticleService extends IService<Article> {
+    ResponseResult hotArticleList();
 }
