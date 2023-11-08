@@ -2,13 +2,16 @@ package com.Incredible.service.impl;
 
 import com.Incredible.domain.ResponseResult;
 import com.Incredible.domain.entity.Article;
+import com.Incredible.domain.vo.HotArticleVo;
 import com.Incredible.mapper.ArticleMapper;
 import com.Incredible.service.ArticleService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -36,6 +39,14 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
 
         List<Article> articles = page.getRecords();
 
-        return ResponseResult.okResult(articles);
+        //bean拷贝
+        List<HotArticleVo> articleVos = new ArrayList<>();
+        for(Article article : articles) {
+            HotArticleVo vo = new HotArticleVo();
+            BeanUtils.copyProperties(article, vo );
+            articleVos.add(vo);
+        }
+
+        return ResponseResult.okResult(articleVos);
     }
 }
